@@ -91,6 +91,8 @@ async function valider() {
   if (saisiNormalisee === PHRASE_ATTENDUE) {
     // ✅ Bonne réponse : enregistrer dans Supabase puis rediriger
     await enregistrerVisite(saisie);
+    // Prévenir le background que cet onglet est autorisé à accéder à YouTube
+    chrome.runtime.sendMessage({ action: "autoriser" });
     window.location.href = getDestination();
   } else {
     // ❌ Mauvaise réponse : afficher le message et recommencer
