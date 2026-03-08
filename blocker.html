@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gardien YouTube</title>
+  <link rel="stylesheet" href="blocker.css" />
+</head>
+<body>
+
+  <div id="conteneur">
+
+    <!-- Question principale -->
+    <h1 id="question">Pour quelle utilisation te rends-tu sur ce site ?</h1>
+
+    <!-- Timer de 10 secondes — visible pendant la pause de réflexion -->
+    <div id="timer-zone">
+      <p id="timer-texte">Prends un moment pour réfléchir…</p>
+      <p id="timer-compte">10</p>
+    </div>
+
+    <!-- Zone de saisie — cachée jusqu'à la fin du timer -->
+    <div id="saisie-zone" class="cache">
+      <input
+        type="text"
+        id="champ-texte"
+        placeholder="Tape ta réponse ici…"
+        autocomplete="off"
+      />
+      <button id="bouton-valider">Continuer</button>
+    </div>
+
+    <!-- Message d'erreur bienveillant — caché par défaut -->
+    <p id="message-erreur" class="cache">
+      Ce n'est pas tout à fait ça. Prends un moment, puis réessaie.
+    </p>
+
+  </div>
+
+  <script src="blocker.js"></script>
+</body>
+</html>
