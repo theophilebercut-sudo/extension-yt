@@ -7,7 +7,7 @@
 // ---- CONFIGURATION SUPABASE ----
 // Remplace ces deux valeurs par les tiennes (Project Settings → API dans Supabase)
 const SUPABASE_URL = "https://ixfyqhrcpqiuzctwtlrc.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_ewVG4iwMcjxu1F6s4bQB1w_omWhsE3x";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml4ZnlxaHJjcHFpdXpjdHd0bHJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5OTQyMjEsImV4cCI6MjA4ODU3MDIyMX0.k3PXjFBqxFXXHntofv9rynPEgXwZrJ3qC3IWNe07sR8";
 
 // La phrase attendue (en minuscules, sans ponctuation)
 const PHRASE_ATTENDUE = "pour apprendre des choses";
