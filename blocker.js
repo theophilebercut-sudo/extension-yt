@@ -6,8 +6,8 @@
 
 // ---- CONFIGURATION SUPABASE ----
 // Remplace ces deux valeurs par les tiennes (Project Settings → API dans Supabase)
-const SUPABASE_URL = "COLLE_TON_PROJECT_URL_ICI";
-const SUPABASE_ANON_KEY = "COLLE_TA_ANON_KEY_ICI";
+const SUPABASE_URL = "https://ixfyqhrcpqiuzctwtlrc.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_ewVG4iwMcjxu1F6s4bQB1w_omWhsE3x";
 
 // La phrase attendue (en minuscules, sans ponctuation)
 const PHRASE_ATTENDUE = "pour apprendre des choses";
