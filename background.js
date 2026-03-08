@@ -4,7 +4,7 @@
 // Dès qu'un onglet charge YouTube, il redirige vers la page de blocage.
 // ================================================
 
-// Onglets ayant validé la phrase — ils ont le droit de passer une fois
+// Onglets ayant validé la phrase — autorisés à naviguer librement sur YouTube
 const tabsAutorises = new Set();
 
 // blocker.js envoie ce message après une validation réussie
@@ -14,32 +14,31 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
   }
 });
 
+// Quand un onglet est fermé, on nettoie
+chrome.tabs.onRemoved.addListener(function (tabId) {
+  tabsAutorises.delete(tabId);
+});
+
 // Cette fonction vérifie si une URL correspond à YouTube
 function estYoutube(url) {
   return url.includes("youtube.com");
 }
 
-// On écoute l'événement qui se déclenche quand une navigation commence dans un onglet
-// "onBeforeNavigate" = "juste avant que la page se charge"
+// On écoute toutes les navigations dans le cadre principal
 chrome.webNavigation.onBeforeNavigate.addListener(function (details) {
-
-  // On ne s'intéresse qu'aux navigations dans le cadre principal (pas les iframes)
   if (details.frameId !== 0) return;
 
-  // Si l'URL cible est YouTube...
   if (estYoutube(details.url)) {
-
-    // Si l'onglet a déjà validé la phrase, on le laisse passer (une seule fois)
+    // YouTube : si l'onglet est autorisé, on laisse passer librement
     if (tabsAutorises.has(details.tabId)) {
-      tabsAutorises.delete(details.tabId);
       return;
     }
-
-    // ...sinon on redirige vers notre page de blocage
-    // On passe l'URL YouTube d'origine en paramètre pour pouvoir y aller après validation
+    // Sinon on redirige vers la page de blocage
     const urlCible = encodeURIComponent(details.url);
     const urlBlocage = chrome.runtime.getURL("blocker.html") + "?destination=" + urlCible;
-
     chrome.tabs.update(details.tabId, { url: urlBlocage });
+  } else {
+    // L'onglet quitte YouTube : on retire l'autorisation
+    tabsAutorises.delete(details.tabId);
   }
 });
