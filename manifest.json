@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Gardien YouTube",
+  "version": "1.0",
+  "description": "Introduit une pause réflexive avant chaque visite sur YouTube.",
+
+  "permissions": [
+    "webNavigation",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://youtube.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["blocker.html", "blocker.css", "blocker.js"],
+      "matches": ["https://www.youtube.com/*", "https://youtube.com/*"]
+    }
+  ]
+}
