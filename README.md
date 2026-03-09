@@ -33,9 +33,9 @@ Pour en ajouter ou en retirer, modifie le tableau `PHRASES_ACCEPTEES` dans `bloc
 
 ```
 "pour apprendre des choses"
-"pour me divertir consciemment"
-"pour regarder une vidéo précise"
-"pour écouter de la musique"
+"apprendre"
+"pour apprendre"
+"musique"
 "pour suivre une formation"
 "pour regarder une vidéo éducative"
 "je regarde une vidéo précise"
