@@ -6,9 +6,9 @@
 // Tu peux ajouter ou retirer des phrases ici librement.
 const PHRASES_ACCEPTEES = [
   "pour apprendre des choses",
-  "pour me divertir consciemment",
-  "pour regarder une vidéo précise",
-  "pour écouter de la musique",
+  "apprendre",
+  "pour apprendre",
+  "musique",
   "pour suivre une formation",
   "pour regarder une vidéo éducative",
   "je regarde une vidéo précise",
