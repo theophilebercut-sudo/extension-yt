@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gardien YouTube</title>
+    <link rel="stylesheet" href="blocker.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Question posée à l'utilisateur -->
+      <p class="question">Pour quelle utilisation te rends-tu sur ce site ?</p>
+
+      <!-- Compte à rebours : visible pendant la pause de réflexion -->
+      <div id="timer" class="timer">10</div>
+      <p id="timer-label" class="timer-label">Prends un moment pour y réfléchir…</p>
+
+      <!-- Zone de saisie : cachée jusqu'à la fin du décompte -->
+      <div id="input-zone" class="input-zone hidden">
+        <input
+          type="text"
+          id="phrase-input"
+          class="phrase-input"
+          placeholder="Tape ta phrase ici…"
+          autocomplete="off"
+        />
+        <button id="valider-btn" class="valider-btn">Valider</button>
+        <p id="message-erreur" class="message-erreur hidden">
+          Ce n'est pas tout à fait ça. Prends un moment, puis réessaie.
+        </p>
+      </div>
+    </div>
+
+    <script src="blocker.js"></script>
+  </body>
+</html>

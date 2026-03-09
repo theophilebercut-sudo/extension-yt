@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Gardien YouTube",
+  "version": "2.0",
+  "description": "Introduit une friction intentionnelle avant chaque visite YouTube.",
+
+  "permissions": ["tabs", "webNavigation"],
+  "host_permissions": ["*://*.youtube.com/*"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["blocker.html", "blocker.css", "blocker.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
