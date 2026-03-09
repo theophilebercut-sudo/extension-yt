@@ -88,7 +88,12 @@ function valider() {
   const saisie = phraseInput.value;
 
   if (phraseEstValide(saisie)) {
-    // Phrase correcte → on récupère l'URL YouTube d'origine et on redirige
+    // Phrase correcte → on déverrouille l'onglet dans background.js.
+    // Ce message indique au gardien que cet onglet peut naviguer librement
+    // sur YouTube sans être re-bloqué à chaque clic.
+    chrome.runtime.sendMessage({ type: "DEVERROUILLER_ONGLET" });
+
+    // On récupère l'URL YouTube d'origine et on redirige.
     const params = new URLSearchParams(window.location.search);
     const redirectUrl = params.get("redirect") || "https://www.youtube.com";
     window.location.href = redirectUrl;
